@@ -1,10 +1,12 @@
-package io.douglascoelho.CadastroDeNinja;
+package io.douglascoelho.CadastroDeNinja.Ninjas;
 
-import jakarta.annotation.Generated;
+import io.douglascoelho.CadastroDeNinja.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "tb_ninjas")
+@Table(name = "tb_cadastro")
 public class NinjaModel {
 
     @Id
@@ -13,6 +15,10 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+
+    @ManyToMany
+    @JoinColumn(name = "missoes_id")
+    private MissoesModel missoes;
 
     public NinjaModel() {}
 
