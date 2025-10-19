@@ -28,7 +28,7 @@ public class NinjaModel {
     @Column (name = "idade")
     private int idade;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
 
